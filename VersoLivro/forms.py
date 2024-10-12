@@ -1,11 +1,26 @@
 from django import forms
-from .models import TIPO_CATEGORIA
+from .models import TIPO_CATEGORIA, Livro, Capitulo
 from rest_framework import serializers
 
-class LivroForm(forms.Form):
-    id = forms.IntegerField(required=False, widget=forms.HiddenInput())
-    titulo = forms.CharField(label='Titulo', max_length=100)
-    autor = serializers.CharField(source='autor', read_only=True)
-    categoria = forms.ChoiceField(choices=TIPO_CATEGORIA)
-    capa = forms.ImageField()
-    sinopse = forms.CharField(label='Sinopse', widget=forms.Textarea(), max_length=500)
+class LivroModelForm(forms.ModelForm):
+    class Meta:
+        model = Livro
+        fields = ['titulo', 'autor', 'categoria', 'capa','sinopse']
+
+
+class CapModelForm(forms.ModelForm):
+     class Meta:
+        model = Capitulo
+        fields = ['numero', 'titulo', 'livro', 'texto']
+
+
+class EditaLivroForm(forms.ModelForm):
+    class Meta:
+        model = Livro
+        fields = '__all__'
+
+
+class EditaCapForm(forms.ModelForm):
+    class Meta:
+        model = Capitulo
+        fields = '__all__'

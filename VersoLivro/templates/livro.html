@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,11 +28,24 @@
             <tr>
                 <td>{{livro.titulo}}</td>
                 <td>{{livro.categoria}}</td>
-                <td>{{livro.capa}}</td>
+                <td><img src="{% static 'img' %}{{livro.capa.url}}" alt="">{{livro.capa.url}}</td>
                 <td>{{livro.autor}}</td>
                 <td>{{livro.sinopse}}</td>
+            </tr>
+            <tr>
+                {% for capitulo in capitulo %}
+                <tr>
+                    {{capitulo.numero}}
+                    <td> {{capitulo.numero}} - <a href="{% url 'verCapitulo' capitulo.id %}">{{capitulo.titulo}}</a></td>
+                
+                </tr>
+                {% endfor %}
 
             </tr>
+            <th scope="row">
+                <a class="btn btn-warning" href="{% url 'editLivro' livro.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'deletLivro' livro.id %}">Deletar</a>
+            </th>
         </tbody>
 
     </table>
