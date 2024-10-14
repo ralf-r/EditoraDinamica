@@ -1,0 +1,56 @@
+#textintro {
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
+    color: white;
+    font-family: 'Comfortaa';
+    font-size: 30px;
+}
+
+#textwhite {
+    color: white;
+}
+
+body {
+    background-image: url('/static/img/candle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+img{
+    max-width: 20%;
+    align:center;
+}
+
+p{
+    color: white;
+}
+
+li{
+    color: white;
+}
+
+
+table {
+    width: 100%; /* Isso garante que a tabela ocupe toda a largura */
+    color: white;
+    text-align: left; /* Alinha o texto das células à esquerda */
+    border-collapse: collapse; /* Remove o espaçamento entre as bordas da tabela */
+}
+
+th, td {
+    padding: 10px 50px; /* Cria espaço dentro das células e cabeçalhos */
+    vertical-align: middle; /* Centraliza o texto verticalmente nas células */
+}
+
+th {
+    text-align: center; /* Centraliza o texto dos cabeçalhos horizontalmente */
+    background-color: rgba(0, 0, 0, 0.7); /* Adiciona uma cor de fundo para contraste (opcional) */
+    color: white;
+}
+
+td {
+    text-align: left; /* Alinha o texto das células à esquerda */
+}
+
+tr {
+    border-bottom: 1px solid white; /* Adiciona uma linha separadora entre as linhas */
+}
