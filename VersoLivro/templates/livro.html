@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Livro</title>
+</head>
+<body>
+    <h1>Pagina Livro</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Categoria</th>
+                <th>Capa</th>
+                <th>Autor</th>
+                <th>Sinopse</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{livro.titulo}}</td>
+                <td>{{livro.categoria}}</td>
+                <td><img src="{% static 'img' %}{{livro.capa.url}}" alt="">{{livro.capa.url}}</td>
+                <td>{{livro.autor}}</td>
+                <td>{{livro.sinopse}}</td>
+            </tr>
+            <tr>
+                {% for capitulo in capitulo %}
+                <tr>
+                    <td> {{capitulo.numero}} - <a href="{% url 'verCapitulo' capitulo.id %}">{{capitulo.titulo}}</a></td>
+                
+                </tr>
+                {% endfor %}
+
+            </tr>
+            {% for grupo in user.groups.all %}
+                {% if livro.autor.username == user.username or grupo.name == 'Administrador' %}
+                    <th scope="row">
+                        <a class="btn btn-warning" href="{% url 'capForm' livro.id %}">Novo Capitulo</a>
+                        <a class="btn btn-warning" href="{% url 'editLivro' livro.id %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'deletLivro' livro.id %}">Deletar</a>
+                    </th>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+
+
+</body>
+
+</html>

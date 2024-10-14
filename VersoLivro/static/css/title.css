@@ -1,0 +1,114 @@
+#textintro {
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
+    color: white;
+    font-family: 'Comfortaa';
+    font-size: 30px;
+}
+
+#imgShowcase {
+    max-width: 25%;
+
+}
+
+h3 {
+    color: azure;
+    font-family: 'Comfortaa';
+
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.base-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1360px;
+    background-color: var(--color-background-barraglobo);
+    position: relative;
+}
+
+.container-right {
+    position: absolute;
+    top: 10px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the right */
+    font-size: 18px;
+}
+
+
+body {
+    background-color: #38444d;
+
+}
+
+/* propor times new roman como a fonte do texto dos capitulos */
+
+
+
+
+/* Carousel container styling */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Carousel with book covers */
+.carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.book-cover {
+    max-width: 200px;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+/* Hover effect to enlarge the covers slightly */
+.book-cover:hover {
+    transform: scale(1.1);
+}
+
+/* Previous and Next buttons */
+.prev-btn,
+.next-btn {
+    background-color: rgba(207, 216, 222, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Hide scrollbars */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}

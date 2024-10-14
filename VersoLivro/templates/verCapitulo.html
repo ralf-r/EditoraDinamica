@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina do Capitulo</title>
+</head>
+
+<body>
+    <h1>Pagina Capitulo</h1>
+
+    <tbody>
+        <tr>
+            <td>{{capitulo.numero}}</td>
+            <td>{{capitulo.titulo}}</td>
+            <td>{{capitulo.livro.titulo}}</td>
+            <td>{{capitulo.texto}}</td>
+        </tr>
+        {% for grupo in user.groups.all %}
+            {% if capitulo.livro.autor.username == user.username or grupo.name == 'Administrador' %}
+                <th scope="row">
+                    <a class="btn btn-warning" href="{% url 'editCap' capitulo.id %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'deletCap' capitulo.id %}">Deletar</a>
+                </th>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</body>
+
+</html>

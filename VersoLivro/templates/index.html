@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+
+    <link rel="stylesheet" href="{% static 'css/title.css' %}">
+</head>
+
+<body>
+    <h1>Home</h1>
+
+    {% if user.is_authenticated %}
+    <p>Bem-vindo, {{ user.username }}</p>
+    <a href="{% url 'logout' %}">Sair</a>
+    {% else %}
+    <p>Você não está logado.</p>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
+
+
+    {% for grupo in user.groups.all %}
+    <li>{{ grupo.name }}</li>
+        {% if grupo.name == 'Escritor' %}
+            <a class="btn btn-warning" href="{% url 'livroForm' %}">Novo Livro</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livro</th>
+                        <th>categoria</th>
+                        <th>capa</th>
+                    </tr>
+            
+                </thead>
+                <tbody>
+                    {% for livro in livros %}
+                        {% if livro.autor.username == user.username %}
+                            <tr>
+                                <td>{{livro.titulo}}</td>
+                                <td>{{livro.categoria}}</td>
+                                <td><a href="{% url 'livro' livro.id %}"><img src="{% static 'img' %}{{livro.capa.url}}"alt="">{{livro.capa.url}}</a></td>
+                    
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            
+            </table>
+        {% elif grupo.name == 'Administrador' %}
+            <a class="btn btn-warning" href="{% url 'livroForm' %}">Novo Livro</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livro</th>
+                        <th>categoria</th>
+                        <th>capa</th>
+                    </tr>
+            
+                </thead>
+                <tbody>
+                    {% for livro in livros %}
+                    <tr>
+                        <td>{{livro.titulo}}</td>
+                        <td>{{livro.categoria}}</td>
+                        <td><a href="{% url 'livro' livro.id %}"><img src="{% static 'img' %}{{livro.capa.url}}"
+                                    alt="">{{livro.capa.url}}</a></td>
+            
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livro</th>
+                        <th>categoria</th>
+                        <th>capa</th>
+                    </tr>
+            
+                </thead>
+                <tbody>
+                    {% for livro in livros %}
+                    <tr>
+                        <td>{{livro.titulo}}</td>
+                        <td>{{livro.categoria}}</td>
+                        <td><a href="{% url 'livro' livro.id %}"><img src="{% static 'img' %}{{livro.capa.url}}" alt="">{{livro.capa.url}}</a></td>
+            
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endfor %}
+
+
+</body>
+
+</html>
