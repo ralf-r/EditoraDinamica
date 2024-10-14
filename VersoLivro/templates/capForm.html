@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Novo Capitulo</h1>
-        <form id="livro_form" method="post" action="{% url 'capForm' %}" class="form" enctype="multipart/form-data">
+        <form id="livro_form" method="post" action="{% url 'capForm' livro.id %}" class="form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Enviar</button>

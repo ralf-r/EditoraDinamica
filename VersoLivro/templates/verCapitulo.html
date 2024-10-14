@@ -11,10 +11,6 @@
 <body>
     <h1>Pagina Capitulo</h1>
 
-    <h2>{{ capitulo }}</h2>
-
-    <p>{{ titulo }}</p>
-
     <tbody>
         <tr>
             <td>{{capitulo.numero}}</td>
@@ -22,10 +18,14 @@
             <td>{{capitulo.livro.titulo}}</td>
             <td>{{capitulo.texto}}</td>
         </tr>
-        <th scope="row">
-            <a class="btn btn-warning" href="{% url 'editCap' capitulo.id %}">Editar</a>
-            <a class="btn btn-danger" href="{% url 'deletCap' capitulo.id %}">Deletar</a>
-        </th>
+        {% for grupo in user.groups.all %}
+            {% if capitulo.livro.autor.username == user.username or grupo.name == 'Administrador' %}
+                <th scope="row">
+                    <a class="btn btn-warning" href="{% url 'editCap' capitulo.id %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'deletCap' capitulo.id %}">Deletar</a>
+                </th>
+            {% endif %}
+        {% endfor %}
     </tbody>
 </body>
 

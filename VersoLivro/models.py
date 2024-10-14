@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.models import Group, Permission
+
 #from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 #from stdimage.models import StdImageField
@@ -49,22 +51,3 @@ class Capitulo(models.Model):
 
 
 
-class Pessoa(models.Model):
-    TIPO_USUARIO = {
-        "E": "EDITOR",
-        "R": "REVISOR",
-        "L": "LEITOR",
-    } 
-
-    id = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=100, help_text='nome')
-    email = models.EmailField('email', unique=True)
-    tpUser = models.CharField(max_length=1, choices=TIPO_USUARIO)
-
-    #USERNAME_FIELD = 'email'
-    #REQUIRED_FIELDS = ['fist_nome', 'tpUser']
-
-    def __str__(self):
-        return self.email
-    
-    #objects = UserManager()

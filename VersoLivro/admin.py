@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Livro, Pessoa, Capitulo
+from .models import Livro, Capitulo
 
 class LivroAdmin(admin.ModelAdmin):
     list_display = ('id', 'titulo', 'autor', 'categoria')
@@ -21,9 +21,5 @@ class CapituloAdmin(admin.ModelAdmin):
     list_display = ('id', 'numero', 'titulo', 'livro')
 
 
-class PessoaAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'tpUser')
-
 admin.site.register(Livro, LivroAdmin)
 admin.site.register(Capitulo, CapituloAdmin)
-admin.site.register(Pessoa)
