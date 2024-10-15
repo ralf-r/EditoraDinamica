@@ -11,6 +11,8 @@ sudo docker run -d -p 8000:8000 miyaaaa/django-docker:0.0.1
 /* talvez necessário */
 sudo docker start  |idCONTAINER do trabalho encontrado em "sudo docker ps -a"| 
 
+/* Agora vá em '127.0.0.1:8000' */
+
 ======================================================================================================================================================
 O tempo não permitiu que implementássemos a parte atrelada a revisor.
 
