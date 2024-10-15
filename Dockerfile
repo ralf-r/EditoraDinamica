@@ -1,15 +1,23 @@
-FROM python:3.12.6
+# Use a imagem oficial do Python
+FROM python:3.10
 
-ENV PYTHONUNBUFFED = 1
+# Desabilita o buffer de saída do Python para obter logs em tempo real
+ENV PYTHONUNBUFFERED=1
 
-WORKDIR  /code 
+# Define o diretório de trabalho dentro do contêiner
+WORKDIR /code
 
-COPY rq.txt .
+# Copia o arquivo de dependências para o contêiner
+COPY requirements.txt .
 
-RUN pip install -r rq.txt
+# Instala as dependências diretamente no contêiner (sem venv)
+RUN pip install -r requirements.txt
 
-COPY . . 
+# Copia todo o restante do código para o contêiner
+COPY . .
 
+# Expõe a porta 8000 (usada pelo Django)
 EXPOSE 8000
 
+# Comando para iniciar o servidor Django
 CMD ["python3", "manage.py", "runserver"]
