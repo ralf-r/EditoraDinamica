@@ -13,7 +13,6 @@ sudo docker run -d 175d45dcca62       /* essa foi a imgID exibida para mim, te c
 sudo docker run -d -p 8000:8000 175d45dcca62  /* isso mapeará o docker na porta 8080, caso não consiga acessar imediantamente por "127.0.0.1:8000" */
 
 ======================================================================================================================================================
-O que não funciona ? Tudo está funcionando exceto a parte de revisor, a qual era muito complicada para nosso curto prazo. Além disso, existem alguns detalhes que não afetam o funcionamento do site, mas contaremos a seguir. 
 
 Página inicial !
 Visão do leitor e usuário não logado: a página inicial exibe todos os livros, suas categorias e clicar em uma capa leva a algum lugar e letras aparecem além da imagem por razão desconhecida.  Exibe opção de login e aviso de não estar logado. O clique para fazer login leva à pagina de login.  O admin consegue sair de sua conta nessa paǵina, assim como criar e ver todos livros. O escritor tem seu cargo de escritor mencionado na página assim como botão de sair para fazer logout na mesma. Os livros escritos por ele aparecem nessa página e o de mais nenhum outro autor. Ele pode criar livros.
@@ -30,14 +29,15 @@ O administrador pode criar capítulo para qualquer usuário
 O escritor pode escrever capítulos para seus livros e por uma falha de tempo na implementação pode também criar capítulos para outros livros.
 Leitor/usuário não cadastrado: não possuem acesso a essa página. Logo, ficam na paǵina inicial se tentarem vir pela URL.
 
-Página de criação de capítulo !
+Página de criação de livro !
+Existem: campo texto para titulo, botões para selecionar autor, categoria e capa. Campo texto para sinopse do livro e botão de enviar formulário para criar novo livro.
 O adm pode criar livro no nome de quaisquer usuário.
 O escritor pode criar livro no nome de quaisquer usuário por uma falha de segurança devida ao tempo para implementação.
-Leitor/usuário não cadastrado: não possuem acesso a essa página. Logo, ficam na paǵina inicial se tentarem vir pela URL.
+Leitor/usuário não cadastrado: possuem acesso a essa página e podem criar no nome de qualquer autor porque não tivemos tempo suficiente para resolver isso.
 
 
 Página de Login !
-O login pode ocorrer através de 3 contas já criadas para sua experiência caso não deseje criar uma conta: 
+O cadastro está através do único link com underline na página; o login pode ocorrer através de 3 contas já criadas para sua experiência caso não deseje criar uma conta: 
 Django Super user:
 Login: rafaelrfeliciano
 Senha: progamacaoWeb
@@ -51,5 +51,7 @@ Login: pedrovillalobos
 Senha: progweb2024
 
 
+Pagina de Cadastro!
+Existem 6 campos para inserção de texto: usuário, email, senha, confirmação de senha, primeiro nome e último nome. ALém disso, existe um select com os 3 grupos/cargos que existem no site. O cadastro não funciona. Existem 2 links no final da pagina: o primeiro para fazer login, redirecionando para página de login e outro para ver como leitor, redirecionando para home.
 
 
