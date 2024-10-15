@@ -204,8 +204,10 @@ def logout_View(request):
     logout(request)
     messages.success(request, "Você saiu com sucesso.")
     livros = Livro.objects.all()
-    return redirect('login')
-
+    context = {
+            'livros': livros
+    }  
+    return render(request, 'index.html', context)
 
 def error404(request, ex):
     template = loader.get_template('404.html')

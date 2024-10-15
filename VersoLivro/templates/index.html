@@ -97,5 +97,30 @@
         {% endif %}
     {% endfor %}
 
+    
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Sair</a>
+    {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livro</th>
+                        <th>categoria</th>
+                        <th>capa</th>
+                    </tr>
+            
+                </thead>
+                <tbody>
+                    {% for livro in livros %}
+                    <tr>
+                        <td>{{livro.titulo}}</td>
+                        <td>{{livro.categoria}}</td>
+                        <td><a href="{% url 'livro' livro.id %}"><img src="{% static 'img' %}{{livro.capa.url}}" alt="">{{livro.capa.url}}</a></td>
+            
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    {% endif %}
   </body>
 </html>
