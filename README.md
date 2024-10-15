@@ -4,15 +4,15 @@ Rafael Feliciano e Lucas Ebrenz
 
 DOCKER: COMO USAR A IMAGEM GERADA, ENVIADA AO PROFESSOR ? 
 
-sudo docker load -i imgDocker.tar     /* descarrega a imagem docker*/
+sudo docker pull miyaaaa/django-docker:0.0.1
 
-sudo docker images                    /* queremos saber a imageID */
+sudo docker run -d -p 8000:8000 miyaaaa/django-docker:0.0.1
 
-sudo docker run -d 175d45dcca62       /* essa foi a imgID exibida para mim, te cabe achar a imgID com repositório e tag, respectivamente, "django-docker:0.0.1" */ 
-
-sudo docker run -d -p 8000:8000 175d45dcca62  /* isso mapeará o docker na porta 8080, caso não consiga acessar imediantamente por "127.0.0.1:8000" */
+/* talvez necessário */
+sudo docker start  |idCONTAINER do trabalho encontrado em "sudo docker ps -a"| 
 
 ======================================================================================================================================================
+O tempo não permitiu que implementássemos a parte atrelada a revisor.
 
 Página inicial !
 Visão do leitor e usuário não logado: a página inicial exibe todos os livros, suas categorias e clicar em uma capa leva a algum lugar e letras aparecem além da imagem por razão desconhecida.  Exibe opção de login e aviso de não estar logado. O clique para fazer login leva à pagina de login.  O admin consegue sair de sua conta nessa paǵina, assim como criar e ver todos livros. O escritor tem seu cargo de escritor mencionado na página assim como botão de sair para fazer logout na mesma. Os livros escritos por ele aparecem nessa página e o de mais nenhum outro autor. Ele pode criar livros.
