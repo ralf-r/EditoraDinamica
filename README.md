@@ -14,7 +14,7 @@ sudo docker start  |idCONTAINER do trabalho encontrado em "sudo docker ps -a"|
 /* Agora vá em '127.0.0.1:8000' */
 
 ======================================================================================================================================================
-O tempo não permitiu que implementássemos a parte atrelada a revisor.
+O tempo não permitiu que implementássemos a parte atrelada a revisor nem uma função de comentários como estava prevista em escopo. O grupo teve dificuldades na implementação de algumas funcionalidades principalmente nas operações em templates, permissões e configuração de views, mas todos os requisitos exigidos foram implementados.
 
 Página inicial !
 Visão do leitor e usuário não logado: a página inicial exibe todos os livros, suas categorias e clicar em uma capa leva a algum lugar e letras aparecem além da imagem por razão desconhecida.  Exibe opção de login e aviso de não estar logado. O clique para fazer login leva à pagina de login.  O admin consegue sair de sua conta nessa paǵina, assim como criar e ver todos livros. O escritor tem seu cargo de escritor mencionado na página assim como botão de sair para fazer logout na mesma. Os livros escritos por ele aparecem nessa página e o de mais nenhum outro autor. Ele pode criar livros.
@@ -51,6 +51,6 @@ Senha: progweb2024
 
 
 Pagina de Cadastro!
-Existem 6 campos para inserção de texto: usuário, email, senha, confirmação de senha, primeiro nome e último nome. ALém disso, existe um select com os 3 grupos/cargos que existem no site. Existem 2 links no final da pagina: o primeiro para fazer login, redirecionando para página de login e outro para ver como leitor, redirecionando para home.
+Existem 6 campos para inserção de texto: usuário, email, senha, confirmação de senha, primeiro nome e último nome. ALém disso, existe um select com os 3 grupos/cargos que existem no site. Existem 2 links no final da pagina: o primeiro para fazer login, redirecionando para página de login e outro para ver como usuário não cadastrado redirecionando para home em um perfil similar ao do Leitor.
 
 
