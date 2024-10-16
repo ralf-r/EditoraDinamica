@@ -40,9 +40,6 @@ Leitor/usuário não cadastrado: possuem acesso a essa página e podem criar no 
 
 Página de Login !
 O cadastro está através do único link com underline na página; o login pode ocorrer através de 3 contas já criadas para sua experiência caso não deseje criar uma conta: 
-Django Super user:
-Login: rafaelrfeliciano
-Senha: progamacaoWeb
 
 Escritor:
 Login: mirandawoops
@@ -54,6 +51,6 @@ Senha: progweb2024
 
 
 Pagina de Cadastro!
-Existem 6 campos para inserção de texto: usuário, email, senha, confirmação de senha, primeiro nome e último nome. ALém disso, existe um select com os 3 grupos/cargos que existem no site. O cadastro não funciona. Existem 2 links no final da pagina: o primeiro para fazer login, redirecionando para página de login e outro para ver como leitor, redirecionando para home.
+Existem 6 campos para inserção de texto: usuário, email, senha, confirmação de senha, primeiro nome e último nome. ALém disso, existe um select com os 3 grupos/cargos que existem no site. Existem 2 links no final da pagina: o primeiro para fazer login, redirecionando para página de login e outro para ver como leitor, redirecionando para home.
 
 
